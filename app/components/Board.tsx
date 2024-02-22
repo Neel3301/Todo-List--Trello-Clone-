@@ -87,16 +87,23 @@ const Board = () => {
   return (
     <div className="p-5">
       <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable droppableId="board" direction="horizontal" type="column">
+        <Droppable
+          droppableId="board"
+          direction={`${window.innerWidth <= 1024 ? "vertical" : "horizontal"}`}
+          type="column">
           {(provided, snapshot) => (
             <div
               className="grid grid-cols-1 lg:grid-cols-3 gap-5 max-w-7xl mx-auto"
               {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
+              ref={provided.innerRef}>
               {Array.from(board.columns.entries()).map(
                 ([id, column], index) => (
-                  <Column key={id} id={id} todos={column.todos} index={index} />
+                  <Column
+                    key={id}
+                    id={id}
+                    todos={column.todos}
+                    index={index}
+                  />
                 )
               )}
             </div>
