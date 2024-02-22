@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header className="w-screen min-w-[320px] max-w-[1650px] p-5 flex flex-col   ">
-      <div className="absolute top-0 left-0 w-full h-screen bg-gradient-to-br from-pink-400 to-[#0055D1] filter blur-3xl opacity-50 -z-50" />
+      <div className="absolute top-0 left-0 w-screen h-screen bg-gradient-to-br from-pink-400 to-[#0055D1] filter blur-3xl opacity-50 -z-50" />
       <div className="flex flex-col gap-3 items-center justify-between lg:flex-row">
         <Image
           src={"/logo.png"}
@@ -42,8 +42,7 @@ const Header = () => {
         <div className="flex items-center justify-center gap-2 min-w-[320px]">
           <form
             action=""
-            className="shadow-md rounded-md p-1.5 flex items-center justify-center bg-white"
-          >
+            className="shadow-md rounded-md p-1.5 flex items-center justify-center bg-white">
             <MagnifyingGlassIcon className="h-5 w-6 text-gray-400" />
             <input
               type="text"
@@ -51,14 +50,15 @@ const Header = () => {
               className="p-2 outline-none flex-1 max-sm:w-[200px]"
               onChange={(e) => setSearchString(e.target.value)}
             />
-            <button type="submit" hidden>
+            <button
+              type="submit"
+              hidden>
               Search
             </button>
           </form>
-          <Avatar name="C N" size="40" round color="#0044D1" />
         </div>
       </div>
-      <div className="flex items-start justify-center mt-4 ">
+      {/* <div className="flex items-start justify-center mt-4 ">
         <div className="h-full flex items-center justify-center gap-2 p-5 rounded-xl bg-white max-w-[720px]">
           <UserCircleIcon
             className={`inline-block min-h-10 min-w-10 h-10 w-10 text-[#0044D1] ${
@@ -71,7 +71,7 @@ const Header = () => {
               : "We Cannot Affort OpenAi API Key to summarize your todo-list just read below shit and start working. if we get any free api we will integrate it."}
           </p>
         </div>
-      </div>
+      </div> */}
     </header>
   );
 };
